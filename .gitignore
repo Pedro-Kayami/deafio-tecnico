@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Build
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment
+.env
+
+# Uploads e arquivos temporários
+uploads/
+boletos-pdf/
+
+# IDEs e sistema operacional
+.vscode/
+*.DS_Store
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# PDF gerados para teste
+*.pdf
