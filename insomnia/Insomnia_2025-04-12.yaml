@@ -1,0 +1,137 @@
+type: collection.insomnia.rest/5.0
+name: Green Acesso
+meta:
+  id: wrk_05a69537af3d4b51a547fb0f99910d1f
+  created: 1744429224686
+  modified: 1744429224686
+collection:
+  - name: Boletos
+    meta:
+      id: fld_10c4c11f83504cb69087c4a0b360b177
+      created: 1744429422329
+      modified: 1744429422329
+      sortKey: -1744429422329
+    children:
+      - url: "{{ _.BaseUrl_dev }}api/importar-boletos"
+        name: Importar Boletos
+        meta:
+          id: req_71996f8d41b346bea4a40eb3a6a4c4a4
+          created: 1744429424394
+          modified: 1744430522466
+          isPrivate: false
+          sortKey: -1744429424394
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_a9bcf9aa288f4c9385a8db88c313212b
+              name: arquivo
+              disabled: false
+              type: file
+              fileName: C:\Users\pedro\Documents\projects\deafio-tecnico\arquivo.csv
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.BaseUrl_dev }}api/boletos"
+        name: Boletos
+        meta:
+          id: req_57ad6f2326da4cf4b3238d3505fd02aa
+          created: 1744430743823
+          modified: 1744432859277
+          isPrivate: false
+          sortKey: -1744430743823
+        method: GET
+        parameters:
+          - id: pair_98a97e5e23fb4803adcfb7169cbab376
+            name: nome
+            value: JOSE
+            disabled: true
+          - id: pair_e365141449654f9183ba995e7e07675f
+            name: valor_inicial
+            value: "100"
+            disabled: true
+          - id: pair_70305f844f854fe39a632b9bcd5540ec
+            name: valor_final
+            value: "200"
+            disabled: true
+          - id: pair_3a2e85c2cea742058732acd445dc6ea7
+            name: id_lote
+            value: "1"
+            disabled: true
+          - id: pair_3b62e9ab780e4d4f8dd17d8819e022d3
+            name: relatorio
+            value: "1"
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: PDF
+    meta:
+      id: fld_2b9684abed124dfb88c6c9e8a50ee06f
+      created: 1744430724540
+      modified: 1744430729565
+      sortKey: -1744430724540
+    children:
+      - url: "{{ _.BaseUrl_dev }}api/importar-pdf"
+        name: Importar Pdf
+        meta:
+          id: req_460cb57275544796ac2093fcebaef09d
+          created: 1744430531494
+          modified: 1744430738984
+          isPrivate: false
+          sortKey: -1744430738933
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_a9bcf9aa288f4c9385a8db88c313212b
+              name: arquivo
+              disabled: false
+              type: file
+              fileName: C:\Users\pedro\Documents\projects\deafio-tecnico\uploads\pdf_fake_boletos.pdf
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_0f75ed82588b59be0e63a36aa42c15cafe2e13db
+    created: 1744429224705
+    modified: 1744429224705
+environments:
+  name: Base Environment
+  meta:
+    id: env_0f75ed82588b59be0e63a36aa42c15cafe2e13db
+    created: 1744429224695
+    modified: 1744429413661
+    isPrivate: false
+  data:
+    BaseUrl_dev: http://localhost:3000/
